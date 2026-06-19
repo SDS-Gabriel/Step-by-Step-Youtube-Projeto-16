@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;800&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+body {
+    display: grid; height: 100vh; place-items: center;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.wrapper { height: 400px; width: 320px; position: relative; }
+
+.card {
+    height: 100%; width: 100%; position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.wrapper:hover .card { transform: rotateY(180deg); }
+
+.front-face, .back-face {
+    position: absolute; height: 100%; width: 100%;
+    backface-visibility: hidden; border-radius: 10px;
+}
+
+.front-face img { height: 100%; width: 100%; object-fit: cover; border-radius: 10px; }
+
+.back-face {
+    background: #fff; transform: rotateY(180deg);
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+}
+
+.back-face .info .title { font-size: 30px; font-weight: 500; }
+.back-face .info p { font-size: 16px; color: #555; }
+
+.back-face .social-media { display: flex; margin-top: 20px; }
+
+.back-face .social-media a {
+    height: 40px; width: 40px; border-radius: 50%;
+    line-height: 40px; text-align: center; color: #9b59b6;
+    border: 1px solid #9b59b6; margin: 0 5px;
+    text-decoration: none; transition: 0.3s;
+}
+
+.back-face .social-media a:hover {
+    background: #9b59b6; color: #fff;
+}
